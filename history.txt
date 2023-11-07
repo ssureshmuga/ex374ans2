@@ -1,0 +1,344 @@
+    1  su -
+    2  git config --global -l
+    3  git config --global user.name "Suresh"
+    4  git config --global user.email suresh@example.com
+    5  git config --global push.default simple
+    6  git config --global -l
+    7  git config --global credential.helper store
+    8  git config --global -l
+    9  git clone https://github.com/ssureshmuga/ex374question
+   10  git clone https://github.com/ssureshmuga/ex374ans2
+   11  ll
+   12  cd ex374ans2/
+   13  ll
+   14  cd ../ex374question/
+   15  ll
+   16  cp -rv * ../ex374ans2/
+   17  cd
+   18  cd ex374ans2/
+   19  ll
+   20  cd web_content/
+   21  ll
+   22  cat ansible.cfg 
+   23  cat content_yml 
+   24  cat inventory 
+   25  mv content_yml alias.yml
+   26  vi alias.conf
+   27  vi alias.yml 
+   28  cd 
+   29  cd ex374ans2/
+   30  rm -rf *
+   31  cd
+   32  cd ex374question/
+   33  cp -rv * ../ex374ans2/
+   34  cd ../ex374ans2/
+   35  ll
+   36  cd web_server/
+   37  ll
+   38  cat alias.conf 
+   39  vi alias.conf 
+   40  vi apache-setup.yml 
+   41  cat alias.conf 
+   42  ll
+   43  vi apache-setup.yml 
+   44  cd
+   45  vim .vimrc
+   46  cd ex374ans2/web_server/
+   47  ll
+   48  vi apache-setup.yml 
+   49  cat notinexam.yml 
+   50  cat inventory 
+   51  ansible-navigator run notinexam.yml -m stdout
+   52  podman login -u admin -p redhat hub.lab.example.com
+   53  ansible-navigator run notinexam.yml -m stdout
+   54  ansible-navigator run apache-setup.yml -m stdout
+   55  vi apache-setup.yml 
+   56  ansible-navigator run apache-setup.yml -m stdout
+   57  vi alias.conf 
+   58  ansible-navigator run apache-setup.yml -m stdout
+   59  curl serverc
+   60  ssh serverc
+   61  vi alias.conf 
+   62  ansible-navigator run apache-setup.yml -m stdout
+   63  curl serverc
+   64  vi notinexam.yml 
+   65  vi apache-setup.yml 
+   66  ansible-navigator run apache-setup.yml -m stdout
+   67  curl serverc
+   68  vi alias.conf 
+   69  ansible-navigator run apache-setup.yml -m stdout
+   70  curl serverc
+   71  vi alias.conf 
+   72  ansible-navigator run apache-setup.yml -m stdout
+   73  curl serverc
+   74  cd 
+   75  cd ex374ans2/
+   76  cd web_content/
+   77  ll
+   78  vi content_yml 
+   79  ansible-navigator run content_yml -m stdout
+   80  vi content_yml 
+   81  cat inventory 
+   82  vi content_yml 
+   83  vim content_yml 
+   84  ansible-navigator run content_yml -m stdout
+   85  vim content_yml 
+   86  ansible-navigator run content_yml -m stdout
+   87  vim content.yml 
+   88  mv content_yml content.yml
+   89  vim content_yml 
+   90  ansible-navigator run content_yml -m stdout
+   91  ansible-navigator run content.yml -m stdout
+   92  vim content.yml 
+   93  ansible-navigator run content.yml -m stdout
+   94  vim content.yml 
+   95  ansible-navigator run content.yml -m stdout
+   96  vim content.yml 
+   97  ll
+   98  ansible-navigator run content.yml -m stdout
+   99  vim content.yml 
+  100  ansible-navigator run content.yml -m stdout
+  101  vim content.yml 
+  102  rm content.yml 
+  103  vim content.yml
+  104  ansible-navigator run content.yml -m stdout
+  105  cat inventory 
+  106  vi content.yml 
+  107  ansible-navigator run content.yml -m stdout
+  108  ansible-navigator run content.yml --tags alpha -m stdout
+  109  curl serverc
+  110  ansible-navigator run content.yml --tags beta -m stdout
+  111  ansible-navigator run content.yml --tags beeta -m stdout
+  112  curl serverc
+  113  cd ..
+  114  ll
+  115  cd tuning_ansible/
+  116  cd 
+  117  cd ex374ans2/create_multi_user/
+  118  ll
+  119  cat inventory 
+  120  cat user_list.yml 
+  121  vi user_list.yml 
+  122  ll
+  123  vi complex_users.yml 
+  124  cat inventory 
+  125  vi complex_users.yml 
+  126  ansible-navigator run complex_users.yml -m stdout
+  127  vi complex_users.yml 
+  128  ll
+  129  vi complex_users.yml 
+  130  ansible-navigator run complex_users.yml -m stdout
+  131  vi complex_users.yml 
+  132  ansible-navigator run complex_users.yml -m stdout
+  133  ll
+  134  cat password-bobby 
+  135  ssh serverc
+  136  vi complex_users.yml 
+  137  ansible-navigator run complex_users.yml -m stdout
+  138  cd
+  139  ll
+  140  cd ex374ans2/
+  141  ll
+  142  cd custom_collectoin/
+  143  ll
+  144  cd ..
+  145  mkdir mycollections
+  146  ll
+  147  rm -rf mycollections/
+  148  mkdir mycollections
+  149  cp create_user/ansible.cfg .
+  150  vi ansible.cfg 
+  151  pwd
+  152  vi ansible.cfg 
+  153  ansible-galaxy collection list
+  154  ansible-galaxy collection install ansible.netcommon -p /home/student/ex374ans2/mycollections/
+  155  ansible-galaxy collection list
+  156  ll
+  157  cd custom_collectoin/
+  158  ll
+  159  rm -rf rhel/
+  160  ansible-galaxy collection init rhel.user
+  161  tree 
+  162  cd rhel/user/
+  163  mkdir meta
+  164  vim meta/runtime.yml
+  165  cd roles/
+  166  ansible-galaxy role init newuser
+  167  tree 
+  168  cd ..
+  169  vim meta/runtime.yml 
+  170  cd roles/
+  171  vim newuser/templates/motd.j2
+  172  vim newuser/tasks/main.yml 
+  173  cat newuser/templates/motd.j2 
+  174  cat newuser/tasks/main.yml 
+  175  cd ..
+  176  cat meta/runtime.yml 
+  177  cd roles/
+  178  vim newuser/tasks/main.yml 
+  179  cd ..
+  180  cat newuser/tasks/main.yml 
+  181  cat roles/newuser/tasks/main.yml 
+  182  tree 
+  183  cat galaxy.yml 
+  184  q!
+  185  ansible-galaxy collection build
+  186  tree 
+  187  cp rhel-user-1.0.0.tar.gz ~/ex374ans2/custom_collectoin/
+  188  cd
+  189  cd ex374ans2/
+  190  ll
+  191  cd ee-user/
+  192  ll
+  193  vi execution-environment.yml
+  194  vi requirements.yml
+  195  cat execution-environment.yml 
+  196  cat requirements.yml 
+  197  ansible-builder create
+  198  tree 
+  199  cp ~/ex374ans2/custom_collectoin/rhel-user-1.0.0.tar.gz context/_build/
+  200  tree 
+  201  podman -u admin -p redhat hub.lab.example.com
+  202  podman login -u admin -p redhat hub.lab.example.com
+  203  cd 
+  204  cd ex374ans2/ee-user/
+  205  ll
+  206  cat execution-environment.yml 
+  207  cat requirements.yml 
+  208  ansible-builder build -t hub.lab.example.com/ee-user-environment:2.0
+  209  podman images
+  210  podman push hub.lab.example.com/ee-user-environment:2.0
+  211  cd ..
+  212  ll
+  213  cd ee-python/
+  214  ll
+  215  cp ../ee-user/execution-environment.yml .
+  216  vi execution-environment.yml 
+  217  vi requirements.txt
+  218  vi bindep.txt
+  219  cat requirements.txt 
+  220  cat bindep.txt 
+  221  cat requirements.txt 
+  222  echo "welcome"
+  223  echo 'welcome'
+  224  cat execution-environment.yml 
+  225  cat bindep.txt 
+  226  ansible-builder create
+  227  tree 
+  228  ansible-builder build -t hub.lab.example.com/ee-python-environment:1.0
+  229  podman images
+  230  podman push hub.lab.example.com/ee-python-environment:1.0
+  231  cd
+  232  cd ex374ans2/
+  233  ll
+  234  cd dynamic_inventory/
+  235  ll
+  236  cat ansible
+  237  cat ansible.cfg 
+  238  cat hosts 
+  239  vi main.yml
+  240  vi main.sh
+  241  chmod +x main.sh 
+  242  sh main.sh 
+  243  ll
+  244  cat hosts 
+  245  vi main.yml 
+  246  sh main.sh 
+  247  ll
+  248  rm main-artifact-2023-11-07T07\:3*
+  249  ll
+  250  llcd 
+  251  cd ..
+  252  ll
+  253  cd master_playbook/
+  254  ll
+  255  chmod +x inventory*.py
+  256  ll
+  257  cat hosts 
+  258  vi master_playbook.yml
+  259  ll
+  260  cd ..
+  261  ll
+  262  cd user_playbook/
+  263  ll
+  264  cat main.yml 
+  265  ll
+  266  cd ..
+  267  cd dynamic_inventory/
+  268  ll
+  269  cat hosts 
+  270  cat main.sh 
+  271  cat main.yml 
+  272  sh main.sh 
+  273  cat hosts 
+  274  cat main.yml 
+  275  vi main.yml 
+  276  sh main.sh 
+  277  ssh servera
+  278  cd ..
+  279  cd master_playbook/
+  280  ll
+  281  ansible-navigator run master_playbook.yml -e file=suresh -e directory=/home/student/test -e content= "My HOSTS" --eei  ee-user-environment:2.0 -i inventorya.py -m stdout
+  282  ansible-navigator run master_playbook.yml -e file=suresh -e directory=/home/student/test -e content="My HOSTS" --eei  ee-user-environment:2.0 -i inventorya.py -m stdout
+  283  cat hosts 
+  284  vi master_playbook.yml 
+  285  ansible-navigator run master_playbook.yml -e file=suresh -e directory=/home/student/test -e content="My HOSTS" --eei  ee-user-environment:2.0 -i inventorya.py -m stdout
+  286  vi master_playbook.yml 
+  287  ansible-navigator run master_playbook.yml -e file=suresh -e directory=/home/student/test -e content="My HOSTS" --eei  ee-user-environment:2.0 -i inventorya.py -m stdout
+  288  ssh servera
+  289  cat master_playbook.yml 
+  290  ssh servera
+  291  ansible-navigator run master_playbook.yml -e file=suresh -e directory=/home/student/test -e content="HOSTS" --eei  ee-user-environment:2.0 -i inventorya.py -m stdout
+  292  ssh servera
+  293  cd ..
+  294  cd user_playbook/
+  295  ll
+  296  cat main.yml 
+  297  rm main.yml 
+  298  vi main.yml
+  299  ansible-navigator run main.yml --eei  ee-user-environment:2.0 -i inventorya.py -m stdout
+  300  ssh servera
+  301  cd ..
+  302  cd custom_collectoin/rhel/user/roles/newuser/
+  303  ll
+  304  cd tasks/
+  305  vi main.yml 
+  306  cd ..
+  307  vi templates/motd.j2 
+  308  cd
+  309  cd ex374ans2/user_playbook/
+  310  ll
+  311  rm main-artifact-2023-11-07T10\:18\:23.789922+00\:00.json 
+  312  ll
+  313  cat main.yml 
+  314  ansible-navigator run main.yml --eei  ee-user-environment:2.0 -i inventorya.py -m stdout
+  315  ssh servera
+  316  cd ..
+  317  vi custom_collectoin/rhel/user/roles/newuser/tasks/main.yml 
+  318  vi custom_collectoin/rhel/user/roles/newuser/templates/motd.j2 
+  319  vi custom_collectoin/rhel/user/roles/newuser/tasks/main.yml 
+  320  ssh servera
+  321  cd user_playbook/
+  322  ll
+  323  vi hosts 
+  324  vim inventorya.py 
+  325  ansible-inventory -i inventorya.py --graph
+  326  ansible-navigator run main.yml --eei  ee-user-environment:2.0 -i inventorya.py -m stdout
+  327  ssh serverb
+  328  cd ..
+  329  vi custom_collectoin/rhel/user/roles/newuser/tasks/main.yml 
+  330  vi custom_collectoin/rhel/user/roles/newuser/templates/motd.j2 
+  331  vi custom_collectoin/rhel/user/roles/newuser/tasks/main.yml 
+  332  git add .
+  333  git commit -m 'add files'
+  334  git push
+  335  cd
+  336  cd .ssh/
+  337  ll
+  338  cat lab_rsa
+  339  cd
+  340  cd ex374ans2/
+  341  ll
+  342  cat ansible.cfg 
+  343  cd ex374ans2/
+  344  history > history.txt
