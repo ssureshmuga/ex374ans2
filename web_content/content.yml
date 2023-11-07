@@ -1,0 +1,16 @@
+---
+- name: tags configure
+  hosts: dev
+  tasks:
+    - name: set alpha content
+      ansible.builtin.copy:
+        content: "Welcome to Alpha"
+        dest: /var/www/html/index.html
+      tags: [never,alpha]
+
+    - name: set beeta content
+      ansible.builtin.copy:
+        content: "Welcome to Beeta"
+        dest: /var/www/html/index.html
+      tags: [never,beeta]
+

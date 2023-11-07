@@ -1,0 +1,6 @@
+---
+# tasks file for newuser
+- name: configure content
+  ansible.builtin.copy:
+    content: motd.j2
+    dest: /etc/motd
